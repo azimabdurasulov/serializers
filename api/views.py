@@ -22,3 +22,7 @@ class TodoView(APIView):
            
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
+    def delete(self, request: Request, tr:str) -> Response:
+        todos = Todo.objects.get(task=tr)
+        todos.delete()
+        return Response({"ruselt: Ok delete"})

@@ -3,7 +3,7 @@ from .models import Todo
 
 class TodoSerializer(serializers.Serializer):
     task = serializers.CharField(max_length=50)
-    desciption = serializers.CharField(max_length=100)
+    description = serializers.CharField(max_length=100)
     completed = serializers.BooleanField(default=False)
 
     def create(self, validated_data):
